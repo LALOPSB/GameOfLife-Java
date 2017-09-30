@@ -18,12 +18,23 @@ public class GOLCell {
 
     public ArrayList<GOLCell> getAdyacentCells(){
         ArrayList<GOLCell> adyacents = new ArrayList<>();
-        for (int i=row-1; i==row+1;i++){
-            for (int j=column-1; j==column+1;j++){
-                adyacents.add(new GOLCell(i,j));
-                System.out.println(j);
+        for (int i=row-1; i<=row+1;i++){
+            for (int j=column-1; j<=column+1;j++){
+                adyacents.add(new GOLCell(i,j));   
             }
         }
         return adyacents;
     }
+
+	public Integer getRow() {
+		return row;
+	}
+
+	public Integer getColumn() {
+		return column;
+	}
+	
+	public Boolean sameCell(GOLCell cell){
+		return row==cell.getRow() && column==cell.getColumn();
+	}
 }
