@@ -1,4 +1,5 @@
 import static junit.framework.TestCase.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -48,12 +49,26 @@ public class CellTest {
     }
 
     @Test
-    public void testTwoCellsNotAdyacentInDiagonalAreNotNeighbors(){
+    public void testTwoCellsNotAdyacentAreNotNeighbors(){
         GOLCell cellOne = new GOLCell(1,0);
         GOLCell cellTwo = new GOLCell(3,2);
         assertFalse(cellOne.isNeighborOf(cellTwo));
     }
 
+    @Test
+    public void testTwoCellsInTheSamePositionAreEquals(){
+    	GOLCell cellOne = new GOLCell(1,0);
+        GOLCell cellTwo = new GOLCell(1,0);
+        assertEquals(cellOne,cellTwo);
+    }
+    
+    @Test
+    public void testTwoCellsInDifferentPositionAreNotEquals(){
+    	GOLCell cellOne = new GOLCell(1,0);
+        GOLCell cellTwo = new GOLCell(1,1);
+        assertNotEquals(cellOne,cellTwo);
+    }
+    
     @Test
     public void testWhenACellGetsAskedAboutItsAdyacentsItReturnsAllItsAdyacents(){
         GOLCell newCell = new GOLCell(1,1);

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 import static java.lang.Math.abs;
 
@@ -34,7 +35,9 @@ public class GOLCell {
 		return column;
 	}
 	
-	public Boolean sameCell(GOLCell cell){
-		return row==cell.getRow() && column==cell.getColumn();
+	@Override
+	public boolean equals(Object cell){
+		return row==((GOLCell) cell).getRow() && column==((GOLCell) cell).getColumn();
 	}
+
 }

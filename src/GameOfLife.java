@@ -59,7 +59,7 @@ public class GameOfLife {
 	}
 
     private ArrayList<GOLCell> addIfItDoesntExist(GOLCell newCell, ArrayList<GOLCell> cells){
-    	cells.removeIf(c -> c.sameCell(newCell));
+    	cells.removeIf(c -> c.equals(newCell));
     	cells.add(newCell);
     	return cells;
     }
