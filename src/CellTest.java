@@ -1,3 +1,4 @@
+
 import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertEquals;
@@ -72,6 +73,6 @@ public class CellTest {
     @Test
     public void testWhenACellGetsAskedAboutItsAdyacentsItReturnsAllItsAdyacents(){
         GOLCell newCell = new GOLCell(1,1);
-        assertEquals(9,newCell.getAdyacentCells().size());
+        assertEquals(9,newCell.getAdjacentCells().size());
     }
 }
